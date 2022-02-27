@@ -8,7 +8,7 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     // Start is called before the first frame update
     public AudioClip pickUp_Sound, dead_Sound;
-
+    public GameObject background_Sound;
     private void Awake()
     {
         MakeInstance();
@@ -29,7 +29,11 @@ public class AudioManager : MonoBehaviour
     }
     public void Player_DeadSound()
     {
+        background_Sound.SetActive(false);
         AudioSource.PlayClipAtPoint(dead_Sound,transform.position);
+        
+    
+        
     }
-
+ 
 }

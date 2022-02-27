@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TextCore;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public float movment_Frequency = 0.1f;
 
     private float counter;
-    private bool move;
+    public bool move;
     [SerializeField]
     private GameObject tailPrefab;
 
@@ -176,6 +177,9 @@ public class PlayerController : MonoBehaviour
         {
             Time.timeScale = 0f;
             AudioManager.instance.Player_DeadSound();
+            SceneManager.LoadScene("GameOver");
         }
     }
+
+
 }

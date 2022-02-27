@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
-
+using UnityEngine.SceneManagement;
 public class GameplayerController : MonoBehaviour
 {
     public static GameplayerController instance;
@@ -18,6 +18,7 @@ public class GameplayerController : MonoBehaviour
     private Text score_Text;
 
     private int scoreCount;
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -27,6 +28,7 @@ public class GameplayerController : MonoBehaviour
     private void Start()
     {
         score_Text = GameObject.Find("Score").GetComponent<Text>();
+        
         Invoke("StartSpawning",0.5f);
     }
 
@@ -63,10 +65,14 @@ public class GameplayerController : MonoBehaviour
         }
         Invoke("StartSpawning",0f);
     }
-
     public void IncreaseScore()
     {
         scoreCount++;
         score_Text.text = "Score: " + scoreCount;
+        if (scoreCount >=40)
+        {
+            SceneManager.LoadScene("StartScene");
+        }
+
     }
 }
