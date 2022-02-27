@@ -124,6 +124,8 @@ public class PlayerController : MonoBehaviour
 
         if (create_Node_At_Tail)
         {
+            create_Node_At_Tail = false;
+            GameObject newNode = Instantiate(tailPrefab,nodes[nodes.Count-1].position,Quaternion.identity);
             
         }
     }
@@ -158,5 +160,18 @@ public class PlayerController : MonoBehaviour
         counter = 0;
         move = false;
         Move();
+    }
+
+    private void OnTriggerEnter(Collider target)
+    {
+        if (target.tag == Tags.FRUIT)
+        {
+            target.gameObject.SetActive(false);
+            create_Node_At_Tail = true;
+        }
+        if (target.tag == Tags.WALL|| target.tag == Tags.BOMB)
+        {
+            print("Touched Wall");
+        }
     }
 }
