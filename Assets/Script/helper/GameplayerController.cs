@@ -71,7 +71,7 @@ public class GameplayerController : MonoBehaviour
         score_Text.text = "Score: " + scoreCount;
         if (scoreCount >=40)
         {
-            SceneManager.LoadScene("StartScene");
+            SceneManager.LoadScene("Win");
         }
 
     }
