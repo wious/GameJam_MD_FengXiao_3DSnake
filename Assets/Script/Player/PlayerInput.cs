@@ -29,26 +29,24 @@ Vertical
         vertical = 0;
 
         GetKeyboardInput();
+        SetMovement();
     }
 
     void GetKeyboardInput()
     {
-        horizaontal = (int) Input.GetAxisRaw("Horizontal");
-        vertical = (int) Input.GetAxisRaw("Vertical");
+        //horizaontal = (int) Input.GetAxisRaw("Horizontal");
+        //vertical = (int) Input.GetAxisRaw("Vertical");
+
+        horizaontal = GetAxisRaw(Axis.Horizontal);
+        vertical = GetAxisRaw(Axis.Vertical);
         if (horizaontal != 0)
         {
             vertical = 0;
         }
+    }
 
-        void SetMovement()
-        {
-            if (vertical != 0)
-            {
-                _playerController.SetInputDirection((vertical == 1)? PlayerDirection.UP: PlayerDirection.DOWN);
-            }
-        }
 
-        int GetAxisRaw(Axis axis)
+    int GetAxisRaw(Axis axis)
         {
             if (axis == Axis.Horizontal)
             {
@@ -69,11 +67,34 @@ Vertical
             else if(axis == Axis.Vertical)
             {
                 bool up = Input.GetKeyDown(KeyCode.W);
-                bool dowm = Input.GetKeyDown()
+                bool dowm = Input.GetKeyDown(KeyCode.S);
+                if (up)
+                {
+                    return 1;
+                }
+
+                if (dowm)
+                {
+                    return -1;
+                }
+
+                return 0;
 
             }
             return 0;
         }
+        void SetMovement()
+        {
+            if (vertical != 0)
+            {
+                _playerController.SetInputDirection((vertical == 1)? PlayerDirection.UP: PlayerDirection.DOWN);
+            }
+            else if (horizaontal !=0)
+            {
+                _playerController.SetInputDirection((horizaontal == 1)? PlayerDirection.RIGHT: PlayerDirection.LEFT);
+
+            }
+        }
     }
     
-}
+
