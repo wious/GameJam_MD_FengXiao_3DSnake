@@ -898,6 +898,18 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: fb3f0ea81d1707b49a93fba42d74f8a7, type: 2}
+    - target: {fileID: 5866666021909216657, guid: a8f296fb61848794986bacaf99c73b1e, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: a8f296fb61848794986bacaf99c73b1e, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: a8f296fb61848794986bacaf99c73b1e, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8f296fb61848794986bacaf99c73b1e, type: 3}
 --- !u!1 &1001733080
