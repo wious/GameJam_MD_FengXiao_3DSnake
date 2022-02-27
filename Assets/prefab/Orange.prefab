@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1044929441779515715}
   - component: {fileID: 2982687538538182025}
   - component: {fileID: 1175847674886673528}
+  - component: {fileID: -231312057356868382}
   m_Layer: 0
   m_Name: Orange
   m_TagString: Fruit
@@ -96,3 +97,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.010000003
   m_Center: {x: 0, y: 0, z: 0.000064714826}
+--- !u!114 &-231312057356868382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3631131598883312732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a83ae537bb954042bd04e22ef99e2ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

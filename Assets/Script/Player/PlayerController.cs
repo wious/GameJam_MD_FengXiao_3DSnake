@@ -126,7 +126,8 @@ public class PlayerController : MonoBehaviour
         {
             create_Node_At_Tail = false;
             GameObject newNode = Instantiate(tailPrefab,nodes[nodes.Count-1].position,Quaternion.identity);
-            
+            newNode.transform.SetParent(transform,true);
+            nodes.Add(newNode.GetComponent<Rigidbody>());
         }
     }
 
@@ -168,10 +169,13 @@ public class PlayerController : MonoBehaviour
         {
             target.gameObject.SetActive(false);
             create_Node_At_Tail = true;
+            GameplayerController.instance.IncreaseScore();
+            AudioManager.instance.Player_PickUpSound();
         }
-        if (target.tag == Tags.WALL|| target.tag == Tags.BOMB)
+        if (target.tag == Tags.WALL|| target.tag == Tags.BOMB||target.tag == Tags.TAIL)
         {
-            print("Touched Wall");
+            Time.timeScale = 0f;
+            AudioManager.instance.Player_DeadSound();
         }
     }
 }
