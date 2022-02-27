@@ -47,5 +47,33 @@ Vertical
                 _playerController.SetInputDirection((vertical == 1)? PlayerDirection.UP: PlayerDirection.DOWN);
             }
         }
+
+        int GetAxisRaw(Axis axis)
+        {
+            if (axis == Axis.Horizontal)
+            {
+                bool left = Input.GetKeyDown(KeyCode.A);
+                bool right = Input.GetKeyDown(KeyCode.D);
+                if (left)
+                {
+                    return -1;
+                }
+
+                if (right)
+                {
+                    return 1;
+                }
+
+                return 0;
+            }
+            else if(axis == Axis.Vertical)
+            {
+                bool up = Input.GetKeyDown(KeyCode.W);
+                bool dowm = Input.GetKeyDown()
+
+            }
+            return 0;
+        }
     }
+    
 }
